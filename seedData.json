@@ -1,0 +1,226 @@
+[
+  {
+    "name": "White rice, cooked",
+    "serving_unit": "100g",
+    "calories": 130,
+    "protein_g": 2.7,
+    "carbs_g": 28.2,
+    "fats_g": 0.3
+  },
+  {
+    "name": "Brown rice, cooked",
+    "serving_unit": "100g",
+    "calories": 123,
+    "protein_g": 2.7,
+    "carbs_g": 26,
+    "fats_g": 1
+  },
+  {
+    "name": "Basmati rice, cooked",
+    "serving_unit": "100g",
+    "calories": 117,
+    "protein_g": 2.8,
+    "carbs_g": 26.5,
+    "fats_g": 0.7
+  },
+  {
+    "name": "Couscous, cooked",
+    "serving_unit": "100g",
+    "calories": 112,
+    "protein_g": 3.8,
+    "carbs_g": 23,
+    "fats_g": 0.2
+  },
+  {
+    "name": "Quinoa, cooked",
+    "serving_unit": "100g",
+    "calories": 126,
+    "protein_g": 5.5,
+    "carbs_g": 20,
+    "fats_g": 2
+  },
+  {
+    "name": "Pap (dry powder)",
+    "serving_unit": "100g",
+    "calories": 365,
+    "protein_g": 10,
+    "carbs_g": 72,
+    "fats_g": 4
+  },
+  {
+    "name": "Custard (dry powder)",
+    "serving_unit": "100g",
+    "calories": 355,
+    "protein_g": 0,
+    "carbs_g": 88,
+    "fats_g": 0.4
+  },
+  {
+    "name": "Tapioca (dry powder)",
+    "serving_unit": "100g",
+    "calories": 358,
+    "protein_g": 0.2,
+    "carbs_g": 88,
+    "fats_g": 0.1
+  },
+  {
+    "name": "Oats, raw",
+    "serving_unit": "100g",
+    "calories": 395,
+    "protein_g": 16.9,
+    "carbs_g": 66.3,
+    "fats_g": 6.9
+  },
+  {
+    "name": "Oats, cooked",
+    "serving_unit": "100g",
+    "calories": 71,
+    "protein_g": 2.6,
+    "carbs_g": 12,
+    "fats_g": 1.5
+  },
+  {
+    "name": "Wheat flour (all-purpose)",
+    "serving_unit": "100g",
+    "calories": 364,
+    "protein_g": 10.3,
+    "carbs_g": 76.3,
+    "fats_g": 1
+  },
+  {
+    "name": "Semolina flour",
+    "serving_unit": "100g",
+    "calories": 360,
+    "protein_g": 12.7,
+    "carbs_g": 72.8,
+    "fats_g": 1.1
+  },
+  {
+    "name": "Oat flour",
+    "serving_unit": "100g",
+    "calories": 404,
+    "protein_g": 15,
+    "carbs_g": 66,
+    "fats_g": 9
+  },
+  {
+    "name": "White bread",
+    "serving_unit": "100g",
+    "calories": 266,
+    "protein_g": 8.6,
+    "carbs_g": 49.8,
+    "fats_g": 3.2
+  },
+  {
+    "name": "Whole wheat bread",
+    "serving_unit": "100g",
+    "calories": 252,
+    "protein_g": 12,
+    "carbs_g": 43,
+    "fats_g": 4
+  },
+  {
+    "name": "Cornflakes (unsweetened)",
+    "serving_unit": "100g",
+    "calories": 357,
+    "protein_g": 7,
+    "carbs_g": 81,
+    "fats_g": 0.4
+  },
+  {
+    "name": "Jollof Rice",
+    "serving_unit": "100g",
+    "calories": 241,
+    "protein_g": 3.8,
+    "carbs_g": 43.8,
+    "fats_g": 5.1
+  },
+  {
+    "name": "Amala (cooked)",
+    "serving_unit": "100g",
+    "calories": 89,
+    "protein_g": 0.3,
+    "carbs_g": 20.5,
+    "fats_g": 0.1
+  },
+  {
+    "name": "Moin Moin",
+    "serving_unit": "100g",
+    "calories": 385,
+    "protein_g": 35,
+    "carbs_g": 42,
+    "fats_g": 14
+  },
+  {
+    "name": "Chin Chin",
+    "serving_unit": "100g",
+    "calories": 510,
+    "protein_g": 9,
+    "carbs_g": 67,
+    "fats_g": 23
+  },
+  {
+    "name": "Peanut Soup",
+    "serving_unit": "100g",
+    "calories": 92,
+    "protein_g": 3,
+    "carbs_g": 8.7,
+    "fats_g": 5
+  },
+  {
+    "name": "Egusi Soup",
+    "serving_unit": "100g",
+    "calories": 593,
+    "protein_g": 25,
+    "carbs_g": 10.5,
+    "fats_g": 52
+  },
+  {
+    "name": "Bitter leaf Soup",
+    "serving_unit": "100g",
+    "calories": 82,
+    "protein_g": 3.7,
+    "carbs_g": 5.5,
+    "fats_g": 5
+  },
+  {
+    "name": "Jute Leaf (Ewedu) Soup",
+    "serving_unit": "100g",
+    "calories": 37,
+    "protein_g": 3.1,
+    "carbs_g": 7,
+    "fats_g": 0.3
+  },
+  {
+    "name": "Lagos Spinach (Soko) Soup",
+    "serving_unit": "100g",
+    "calories": 80,
+    "protein_g": 4,
+    "carbs_g": 4,
+    "fats_g": 6
+  },
+  {
+    "name": "Banana",
+    "serving_unit": "100g",
+    "calories": 89,
+    "protein_g": 1,
+    "carbs_g": 23,
+    "fats_g": 0.3
+  },
+  {
+    "name": "Eggplant (raw)",
+    "serving_unit": "100g",
+    "calories": 21,
+    "protein_g": 1.1,
+    "carbs_g": 2.4,
+    "fats_g": 0.1
+  },
+  {
+    "name": "Avocado",
+    "serving_unit": "100g",
+    "calories": 160,
+    "protein_g": 2,
+    "carbs_g": 8.5,
+    "fats_g": 14.7
+  }
+]

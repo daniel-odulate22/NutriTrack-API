@@ -1,0 +1,26 @@
+# --- SECRETS ---
+# Ignore all .env files and their contents
+.env
+
+# --- DEPENDENCIES ---
+# Ignore the massive node_modules folder
+node_modules/
+
+# --- SEEDING (Optional but Recommended) ---
+# You can ignore the seed scripts since they only run once
+# and the .json file *could* be large in the future.
+# Keep seedData.json if you want others to have the data.
+# seed.js
+# seedTips.js
+
+# --- LOGS ---
+# Ignore any log files
+*.log
+npm-debug.log*
+
+# --- OPERATING SYSTEM ---
+# Ignore Mac system files
+.DS_Store
+
+# Ignore Windows system files
+Thumbs.db
