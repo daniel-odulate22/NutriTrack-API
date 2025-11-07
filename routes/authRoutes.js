@@ -41,7 +41,15 @@ router.post('/login', async (req, res) => {
     if (!isPasswordCorrect) {
       return res.status(400).send('Login failed. Wrong email or password.');
     }
-    const payload = { user: { id: user.id, name: user.name, email: user.email, goal: user.goal } };
+    // Create the "VIP Pass" payload
+    const payload = { 
+      user: { 
+        id: user.id, 
+        name: user.name, 
+        email: user.email, 
+        goal: user.goal // Include the goal here!
+      } 
+    };
     const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '3h' });
     res.status(200).json({ token: token });
   } catch (error) {

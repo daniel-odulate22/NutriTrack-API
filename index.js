@@ -39,6 +39,8 @@ app.get('/', (req, res) => {
 });
 
 // --- 7. TURN ON YOUR KITCHEN "LIGHTS" ---
-app.listen(port, () => {
-  console.log(`Kitchen is running on http://localhost:${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Kitchen is running on http://localhost:${port}`);
+// });
+
+module.exports = app;
