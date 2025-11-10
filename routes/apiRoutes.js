@@ -157,4 +157,19 @@ router.get('/users/me', protect, async (req, res) => {
   }
 });
 
+// "RECIPE" FOR GETTING ALL FOODS (Protected)
+// Path: /foods
+router.get('/foods', protect, async (req, res) => {
+  console.log("--- CHECKPOINT 1: /api/foods recipe has started ---");
+  try {
+    // Find all foods and sort them by name
+    const allFoods = await Food.find({}).sort({ name: 1 });
+    res.status(200).json(allFoods);
+  } catch (error) {
+    console.error("--- !!! GET FOODS CRASH REPORT !!! ---");
+    console.error(error);
+    res.status(500).send('The kitchen had a problem, please try again.');
+  }
+});
+
 module.exports = router;
