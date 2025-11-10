@@ -39,7 +39,7 @@ const mealLogSchema = new mongoose.Schema({
   mealType: {
     type: String,
     required: true,
-    enum: ['Breakfast', 'Lunch', 'Dinner', 'Snack']
+    enum: ['breakfast', 'lunch', 'dinner', 'snacks']
   },
   servingSize: {
     type: Number,
