@@ -7,19 +7,58 @@ const Tip = require('../models/tipModel'); // Tip Model
 const { protect } = require('../middleware/authMiddleware'); // Our "Bouncer"
 const router = express.Router();
 
-// "RECIPE" FOR LOGGING A MEAL (Protected)
+// "RECIPE" FOR LOGGING A MEAL (v2 - Now accepts custom foods)
+// This is the only version of this route
 router.post('/meals/log', protect, async (req, res) => {
-  console.log("--- CHECKPOINT 1: /api/meals/log recipe has started ---");
+  console.log("--- CHECKPOINT 1: /api/meals/log (v2) recipe started ---");
   try {
-    const { foodId, servingSize } = req.body;
-    const userId = req.user.id; 
-    const food = await Food.findById(foodId);
-    if (!food) {
-      return res.status(404).send('Food not found in pantry');
+    const { foodId, customName, calories, protein_g, carbs_g, fats_g, mealType, servingSize } = req.body;
+    const userId = req.user.id;
+
+    let newLog;
+
+    if (foodId) {
+      // --- LOGIC FOR A "QUICK ADD" (NORMAL) MEAL ---
+      const food = await Food.findById(foodId);
+      if (!food) return res.status(404).send('Food not found');
+
+      newLog = new MealLog({
+        user: userId,
+        food: foodId,
+        mealType: mealType || 'Snack', // Default to snack if not provided
+        servingSize: servingSize || 1,
+        // We get calories from the food model
+        calories: food.calories * (servingSize || 1),
+        protein_g: food.protein_g * (servingSize || 1),
+        carbs_g: food.carbs_g * (servingSize || 1),
+        fats_g: food.fats_g * (servingSize || 1),
+      });
+
+    } else if (customName) {
+      // --- LOGIC FOR A "CUSTOM" MEAL ---
+      if (!calories || !mealType) {
+        return res.status(400).send('Custom name, calories, and mealType are required.');
+      }
+
+      newLog = new MealLog({
+        user: userId,
+        customName: customName,
+        mealType: mealType,
+        servingSize: 1, // Custom meals are always 1 serving
+        calories: calories,
+        protein_g: protein_g || 0,
+        carbs_g: carbs_g || 0,
+        fats_g: fats_g || 0,
+      });
+
+    } else {
+      return res.status(400).send('A foodId or a customName is required.');
     }
-    const newLog = new MealLog({ user: userId, food: foodId, servingSize: servingSize });
+
+    // Save the new log
     await newLog.save();
-    res.status(201).send('Meal successfully logged');
+    res.status(201).json(newLog); // Send the new log back
+
   } catch (error) {
     console.error("--- !!! MEAL LOG CRASH REPORT !!! ---");
     console.error(error);
@@ -27,13 +66,17 @@ router.post('/meals/log', protect, async (req, res) => {
   }
 });
 
-// "RECIPE" FOR GETTING ALL MY LOGGED MEALS (Protected)
+// "RECIPE" FOR GETTING ALL MY LOGGED MEALS (v2 - Now "populated")
 router.get('/meals/me', protect, async (req, res) => {
-  console.log("--- CHECKPOINT 1: /api/meals/me recipe has started ---");
+  console.log("--- CHECKPOINT 1: /api/meals/me (v2) recipe has started ---");
   try {
     const userId = req.user.id;
-    const myLogs = await MealLog.find({ user: userId }).sort({ date: -1 });
+    const myLogs = await MealLog.find({ user: userId })
+      .sort({ date: -1 })
+      .populate('food'); // <-- This "populates" the food details
+    
     res.status(200).json(myLogs);
+
   } catch (error) {
     console.error("--- !!! GET MY MEALS CRASH REPORT !!! ---");
     console.error(error);
@@ -130,26 +173,15 @@ router.get('/tips/random', protect, async (req, res) => {
 });
 
 // "RECIPE" FOR GETTING MY (CURRENT USER'S) PROFILE (Protected)
-// Path: /users/me
 router.get('/users/me', protect, async (req, res) => {
   console.log("--- CHECKPOINT 1: /api/users/me recipe has started ---");
-
   try {
-    // 1. Get the User's ID (from the Bouncer)
-    // The "protect" bouncer already put the user's info in req.user
     const userId = req.user.id; 
-
-    // 2. Find that user in the database
-    // We use .select('-password') to remove the password hash from the response
     const user = await User.findById(userId).select('-password');
-
     if (!user) {
       return res.status(404).send('User not found.');
     }
-
-    // 3. Send the user's profile data back
     res.status(200).json(user);
-
   } catch (error) {
     console.error("--- !!! GET USER PROFILE CRASH REPORT !!! ---");
     console.error(error);
@@ -158,11 +190,9 @@ router.get('/users/me', protect, async (req, res) => {
 });
 
 // "RECIPE" FOR GETTING ALL FOODS (Protected)
-// Path: /foods
 router.get('/foods', protect, async (req, res) => {
   console.log("--- CHECKPOINT 1: /api/foods recipe has started ---");
   try {
-    // Find all foods and sort them by name
     const allFoods = await Food.find({}).sort({ name: 1 });
     res.status(200).json(allFoods);
   } catch (error) {

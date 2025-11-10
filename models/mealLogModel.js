@@ -6,24 +6,49 @@ const mealLogSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: 'User' // This tells Mongoose to "look in the User drawer"
+    ref: 'User'
   },
-  // A "link" to the specific food they ate
+  // --- This is for NORMAL foods from our database ---
   food: {
     type: mongoose.Schema.Types.ObjectId,
+    ref: 'Food',
+    required: false // Now optional!
+  },
+  // --- These are for NEW CUSTOM foods ---
+  customName: {
+    type: String,
+    required: false
+  },
+  calories: {
+    type: Number,
+    required: true
+  },
+  protein_g: {
+    type: Number,
+    default: 0
+  },
+  carbs_g: {
+    type: Number,
+    default: 0
+  },
+  fats_g: {
+    type: Number,
+    default: 0
+  },
+  // --- Other info ---
+  mealType: {
+    type: String,
     required: true,
-    ref: 'Food' // This tells Mongoose to "look in the Food drawer"
+    enum: ['Breakfast', 'Lunch', 'Dinner', 'Snack']
   },
-  // When they ate it
-  date: {
-    type: Date,
-    default: Date.now // Automatically sets to right now
-  },
-  // How many servings (e.g., 1.5 servings of 100g)
   servingSize: {
     type: Number,
     required: true,
     default: 1
+  },
+  date: {
+    type: Date,
+    default: Date.now
   }
 });
 
