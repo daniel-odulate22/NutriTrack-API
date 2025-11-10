@@ -129,4 +129,32 @@ router.get('/tips/random', protect, async (req, res) => {
   }
 });
 
+// "RECIPE" FOR GETTING MY (CURRENT USER'S) PROFILE (Protected)
+// Path: /users/me
+router.get('/users/me', protect, async (req, res) => {
+  console.log("--- CHECKPOINT 1: /api/users/me recipe has started ---");
+
+  try {
+    // 1. Get the User's ID (from the Bouncer)
+    // The "protect" bouncer already put the user's info in req.user
+    const userId = req.user.id; 
+
+    // 2. Find that user in the database
+    // We use .select('-password') to remove the password hash from the response
+    const user = await User.findById(userId).select('-password');
+
+    if (!user) {
+      return res.status(404).send('User not found.');
+    }
+
+    // 3. Send the user's profile data back
+    res.status(200).json(user);
+
+  } catch (error) {
+    console.error("--- !!! GET USER PROFILE CRASH REPORT !!! ---");
+    console.error(error);
+    res.status(500).send('The kitchen had a problem, please try again.');
+  }
+});
+
 module.exports = router;
