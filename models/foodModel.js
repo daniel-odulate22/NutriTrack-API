@@ -27,7 +27,8 @@ const foodSchema = new mongoose.Schema({
   fats_g: { 
     type: Number, 
     default: 0 
-  }
+  },
+  imageUrl: { type: String, default: '' }
 });
 
 const Food = mongoose.model('Food', foodSchema);

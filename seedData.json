@@ -5,7 +5,8 @@
     "calories": 130,
     "protein_g": 2.7,
     "carbs_g": 28.2,
-    "fats_g": 0.3
+    "fats_g": 0.3,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/Rice.jpg"
   },
   {
     "name": "Brown rice, cooked",
@@ -13,7 +14,8 @@
     "calories": 123,
     "protein_g": 2.7,
     "carbs_g": 26,
-    "fats_g": 1
+    "fats_g": 1,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/Rice.jpg"
   },
   {
     "name": "Basmati rice, cooked",
@@ -21,7 +23,8 @@
     "calories": 117,
     "protein_g": 2.8,
     "carbs_g": 26.5,
-    "fats_g": 0.7
+    "fats_g": 0.7,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/Rice.jpg"
   },
   {
     "name": "Couscous, cooked",
@@ -29,7 +32,8 @@
     "calories": 112,
     "protein_g": 3.8,
     "carbs_g": 23,
-    "fats_g": 0.2
+    "fats_g": 0.2,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/millet.jpg"
   },
   {
     "name": "Quinoa, cooked",
@@ -37,31 +41,8 @@
     "calories": 126,
     "protein_g": 5.5,
     "carbs_g": 20,
-    "fats_g": 2
-  },
-  {
-    "name": "Pap (dry powder)",
-    "serving_unit": "100g",
-    "calories": 365,
-    "protein_g": 10,
-    "carbs_g": 72,
-    "fats_g": 4
-  },
-  {
-    "name": "Custard (dry powder)",
-    "serving_unit": "100g",
-    "calories": 355,
-    "protein_g": 0,
-    "carbs_g": 88,
-    "fats_g": 0.4
-  },
-  {
-    "name": "Tapioca (dry powder)",
-    "serving_unit": "100g",
-    "calories": 358,
-    "protein_g": 0.2,
-    "carbs_g": 88,
-    "fats_g": 0.1
+    "fats_g": 2,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/sorghum.jpg"
   },
   {
     "name": "Oats, raw",
@@ -69,7 +50,8 @@
     "calories": 395,
     "protein_g": 16.9,
     "carbs_g": 66.3,
-    "fats_g": 6.9
+    "fats_g": 6.9,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/Oat.jpg"
   },
   {
     "name": "Oats, cooked",
@@ -77,47 +59,8 @@
     "calories": 71,
     "protein_g": 2.6,
     "carbs_g": 12,
-    "fats_g": 1.5
-  },
-  {
-    "name": "Wheat flour (all-purpose)",
-    "serving_unit": "100g",
-    "calories": 364,
-    "protein_g": 10.3,
-    "carbs_g": 76.3,
-    "fats_g": 1
-  },
-  {
-    "name": "Semolina flour",
-    "serving_unit": "100g",
-    "calories": 360,
-    "protein_g": 12.7,
-    "carbs_g": 72.8,
-    "fats_g": 1.1
-  },
-  {
-    "name": "Oat flour",
-    "serving_unit": "100g",
-    "calories": 404,
-    "protein_g": 15,
-    "carbs_g": 66,
-    "fats_g": 9
-  },
-  {
-    "name": "White bread",
-    "serving_unit": "100g",
-    "calories": 266,
-    "protein_g": 8.6,
-    "carbs_g": 49.8,
-    "fats_g": 3.2
-  },
-  {
-    "name": "Whole wheat bread",
-    "serving_unit": "100g",
-    "calories": 252,
-    "protein_g": 12,
-    "carbs_g": 43,
-    "fats_g": 4
+    "fats_g": 1.5,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/Oat.jpg"
   },
   {
     "name": "Cornflakes (unsweetened)",
@@ -125,7 +68,8 @@
     "calories": 357,
     "protein_g": 7,
     "carbs_g": 81,
-    "fats_g": 0.4
+    "fats_g": 0.4,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/Corn-Flakes.jpg"
   },
   {
     "name": "Jollof Rice",
@@ -133,7 +77,8 @@
     "calories": 241,
     "protein_g": 3.8,
     "carbs_g": 43.8,
-    "fats_g": 5.1
+    "fats_g": 5.1,
+    "imageUrl": "../Meal logging image.jpg"
   },
   {
     "name": "Amala (cooked)",
@@ -141,7 +86,8 @@
     "calories": 89,
     "protein_g": 0.3,
     "carbs_g": 20.5,
-    "fats_g": 0.1
+    "fats_g": 0.1,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/yam.jpeg"
   },
   {
     "name": "Moin Moin",
@@ -149,7 +95,8 @@
     "calories": 385,
     "protein_g": 35,
     "carbs_g": 42,
-    "fats_g": 14
+    "fats_g": 14,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/Beans.jpg"
   },
   {
     "name": "Chin Chin",
@@ -157,7 +104,8 @@
     "calories": 510,
     "protein_g": 9,
     "carbs_g": 67,
-    "fats_g": 23
+    "fats_g": 23,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/Golden-morn.jpg"
   },
   {
     "name": "Peanut Soup",
@@ -165,7 +113,8 @@
     "calories": 92,
     "protein_g": 3,
     "carbs_g": 8.7,
-    "fats_g": 5
+    "fats_g": 5,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/Beans.jpg"
   },
   {
     "name": "Egusi Soup",
@@ -173,7 +122,8 @@
     "calories": 593,
     "protein_g": 25,
     "carbs_g": 10.5,
-    "fats_g": 52
+    "fats_g": 52,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/watermelon.jpg"
   },
   {
     "name": "Bitter leaf Soup",
@@ -181,7 +131,8 @@
     "calories": 82,
     "protein_g": 3.7,
     "carbs_g": 5.5,
-    "fats_g": 5
+    "fats_g": 5,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/spinach.jpg"
   },
   {
     "name": "Jute Leaf (Ewedu) Soup",
@@ -189,7 +140,8 @@
     "calories": 37,
     "protein_g": 3.1,
     "carbs_g": 7,
-    "fats_g": 0.3
+    "fats_g": 0.3,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/spinach.jpg"
   },
   {
     "name": "Lagos Spinach (Soko) Soup",
@@ -197,7 +149,8 @@
     "calories": 80,
     "protein_g": 4,
     "carbs_g": 4,
-    "fats_g": 6
+    "fats_g": 6,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/spinach.jpg"
   },
   {
     "name": "Banana",
@@ -205,7 +158,8 @@
     "calories": 89,
     "protein_g": 1,
     "carbs_g": 23,
-    "fats_g": 0.3
+    "fats_g": 0.3,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/Banana.jpg"
   },
   {
     "name": "Eggplant (raw)",
@@ -213,7 +167,8 @@
     "calories": 21,
     "protein_g": 1.1,
     "carbs_g": 2.4,
-    "fats_g": 0.1
+    "fats_g": 0.1,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/spinach.jpg"
   },
   {
     "name": "Avocado",
@@ -221,6 +176,70 @@
     "calories": 160,
     "protein_g": 2,
     "carbs_g": 8.5,
-    "fats_g": 14.7
+    "fats_g": 14.7,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/pineapple.jpg"
+  },
+  {
+    "name": "Eggs",
+    "serving_unit": "100g",
+    "calories": 143,
+    "protein_g": 12,
+    "carbs_g": 0.7,
+    "fats_g": 9.9,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/eggs.jpg"
+  },
+  {
+    "name": "Chicken Breast, cooked",
+    "serving_unit": "100g",
+    "calories": 165,
+    "protein_g": 31,
+    "carbs_g": 0,
+    "fats_g": 3.6,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/chicken.jpeg"
+  },
+  {
+    "name": "Beef, cooked",
+    "serving_unit": "100g",
+    "calories": 250,
+    "protein_g": 26,
+    "carbs_g": 0,
+    "fats_g": 15,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/cowmeat.jpg"
+  },
+  {
+    "name": "Apple",
+    "serving_unit": "100g",
+    "calories": 52,
+    "protein_g": 0.3,
+    "carbs_g": 14,
+    "fats_g": 0.2,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/Apples.jpg"
+  },
+  {
+    "name": "Orange",
+    "serving_unit": "100g",
+    "calories": 47,
+    "protein_g": 0.9,
+    "carbs_g": 12,
+    "fats_g": 0.1,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/Orange.jpg"
+  },
+  {
+    "name": "Watermelon",
+    "serving_unit": "100g",
+    "calories": 30,
+    "protein_g": 0.6,
+    "carbs_g": 8,
+    "fats_g": 0.2,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/watermelon.avif"
+  },
+  {
+    "name": "Carrot",
+    "serving_unit": "100g",
+    "calories": 41,
+    "protein_g": 0.9,
+    "carbs_g": 10,
+    "fats_g": 0.2,
+    "imageUrl": "../SUGGESTION FOLDER/Image Folder/carrot.jpg"
   }
 ]
