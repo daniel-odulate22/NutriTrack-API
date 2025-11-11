@@ -85,22 +85,33 @@ router.get('/meals/me', protect, async (req, res) => {
   }
 });
 
-// "RECIPE" FOR GETTING SMART SUGGESTIONS (Protected)
+// "RECIPE" FOR GETTING SMART SUGGESTIONS
 router.get('/suggestions', protect, async (req, res) => {
   console.log("--- CHECKPOINT 1: /api/suggestions recipe has started ---");
   try {
+    // 1. Check if the user sent a specific goal in the URL
+    const queryGoal = req.query.goal; // e.g., "weight_loss"
+
+    // 2. If they didn't, use the goal from their profile
     const userGoal = req.user.goal; 
-    console.log(`--- CHECKPOINT 2: Finding suggestions for goal: ${userGoal} ---`);
+
+    // 3. Decide which goal to use
+    const effectiveGoal = queryGoal || userGoal; // Use query first, fallback to profile
+
+    console.log(`--- CHECKPOINT 2: Finding suggestions for goal: ${effectiveGoal} ---`);
+
     let query = {};
-    if (userGoal === 'weight_loss') {
+    if (effectiveGoal === 'weight_loss') {
       query = { calories: { $lt: 150 } }; 
-    } else if (userGoal === 'weight_gain') {
+    } else if (effectiveGoal === 'weight_gain') {
       query = { $or: [ { protein_g: { $gt: 20 } }, { calories: { $gt: 400 } } ] };
-    } else {
+    } else { // 'maintain_weight'
       query = { calories: { $gte: 100, $lte: 300 } };
     }
+
     const suggestions = await Food.find(query).limit(10);
     res.status(200).json(suggestions);
+
   } catch (error) {
     console.error("--- !!! SUGGESTIONS CRASH REPORT !!! ---");
     console.error(error);
