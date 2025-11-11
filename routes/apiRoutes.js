@@ -241,4 +241,45 @@ router.get('/reminders/me', protect, async (req, res) => {
   }
 });
 
+// "RECIPE" FOR DELETING A REMINDER (Protected)
+router.delete('/reminders/:id', protect, async (req, res) => {
+  console.log("--- CHECKPOINT 1: /api/reminders/:id recipe has started ---");
+
+  try {
+    // 1. Get the Guest's ID (from the Bouncer)
+    const userId = req.user.id;
+
+    // 2. Get the Reminder's ID (from the URL)
+    const reminderId = req.params.id; 
+
+    // 3. Find that specific reminder in the "Reminders" collection
+    const reminder = await Reminder.findById(reminderId);
+
+    // 4. Check if the reminder even exists
+    if (!reminder) {
+      console.log("--- DELETE FAILED: Reminder not found ---");
+      return res.status(404).send('Reminder not found.');
+    }
+
+    // 5. CRITICAL: Check if this user OWNS this reminder
+    if (reminder.user.toString() !== userId) {
+      console.log("--- DELETE FAILED: User does not own this reminder ---");
+      return res.status(401).send('Not authorized to delete this reminder.');
+    }
+
+    // 6. If they own it, delete it!
+    await Reminder.deleteOne({ _id: reminderId });
+
+    console.log("--- CHECKPOINT 2: Reminder deleted successfully ---");
+
+    // 7. Send a success message
+    res.status(200).send('Reminder deleted');
+
+  } catch (error) {
+    console.error("--- !!! DELETE REMINDER CRASH REPORT !!! ---");
+    console.error(error);
+    res.status(500).send('The kitchen had a problem.');
+  }
+});
+
 module.exports = router;
