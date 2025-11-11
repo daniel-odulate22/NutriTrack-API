@@ -3,6 +3,7 @@ const express = require('express');
 const Food = require('../models/foodModel');
 const MealLog = require('../models/mealLogModel');
 const User = require('../models/userModel');
+const Reminder = require('../models/reminderModel');
 const Tip = require('../models/tipModel'); // Tip Model
 const { protect } = require('../middleware/authMiddleware'); // Our "Bouncer"
 const router = express.Router();
@@ -199,6 +200,44 @@ router.get('/foods', protect, async (req, res) => {
     console.error("--- !!! GET FOODS CRASH REPORT !!! ---");
     console.error(error);
     res.status(500).send('The kitchen had a problem, please try again.');
+  }
+});
+
+// "RECIPE" FOR CREATING A NEW REMINDER
+router.post('/reminders', protect, async (req, res) => {
+  try {
+    const { reminderType, time } = req.body;
+    const userId = req.user.id;
+
+    if (!reminderType || !time) {
+      return res.status(400).send('Reminder type and time are required.');
+    }
+
+    const newReminder = new Reminder({
+      user: userId,
+      reminderType: reminderType,
+      time: time
+    });
+
+    await newReminder.save();
+    res.status(201).json(newReminder); // Send the new reminder back
+  } catch (error) {
+    console.error("--- !!! CREATE REMINDER CRASH REPORT !!! ---");
+    console.error(error);
+    res.status(500).send('The kitchen had a problem.');
+  }
+});
+
+// "RECIPE" FOR GETTING ALL MY REMINDERS
+router.get('/reminders/me', protect, async (req, res) => {
+  try {
+    const userId = req.user.id;
+    const reminders = await Reminder.find({ user: userId }).sort({ time: 1 });
+    res.status(200).json(reminders);
+  } catch (error) {
+    console.error("--- !!! GET REMINDERS CRASH REPORT !!! ---");
+    console.error(error);
+    res.status(500).send('The kitchen had a problem.');
   }
 });
 
